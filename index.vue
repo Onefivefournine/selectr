@@ -237,6 +237,5 @@ export default Vue.extend( {
       }
     },
   },
-  template
 } );
 </script>
