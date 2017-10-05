@@ -1,0 +1,25 @@
+{
+  "name": "selectr",
+  "version": "1.0.0",
+  "description": "Vue multiple tags select",
+  "main": "index.vue",
+  "scripts": {
+    "test": "echo 'Test'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Onefivefournine/selectr.git"
+  },
+  "keywords": [
+    "Vue",
+    "select",
+    "tags",
+    "input"
+  ],
+  "author": "onefivefournine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Onefivefournine/selectr/issues"
+  },
+  "homepage": "https://github.com/Onefivefournine/selectr#readme"
+}
