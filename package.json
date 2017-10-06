@@ -1,6 +1,6 @@
 {
   "name": "selectr-tags",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Vue multiple tags select",
   "main": "index.vue",
   "scripts": {
