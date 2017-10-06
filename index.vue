@@ -106,7 +106,7 @@ $anti-primary:#ff482a;
       <div class="selectr__options"
         v-show="opened">
         <div class="selectr__option"
-          :class="option.selected?'disabled':''"
+          :class="{disabled:option.selected}"
           @click="select(option)"
           :key="option.label"
           v-for="option in innerOptions">
@@ -183,25 +183,8 @@ export default Vue.extend( {
     }
   },
   created() {
-    this.innerOptions = this.options.map( ( opt ) => {
-      let retVal = {};
-      if ( typeof opt === 'string' ) {
-        retVal = {
-          label: opt,
-          value: opt,
-          selected: false,
-          innerId: ( Math.random() * 100000 ).toFixed() // TODO replace by uuid
-        }
-      } else if ( typeof opt === 'object' ) { // dirty check, because of props validation
-        retVal = {
-          label: this.getOptionLabel( opt ),
-          value: opt,
-          selected: false,
-          innerId: ( Math.random() * 100000 ).toFixed()
-        }
-      }
-      return retVal;
-    } )
+    this.innerOptions = this.options.map( this.parseOption );
+    this.selectedItems = this.value.map( this.parseOption );
   },
   methods: {
     blur() {
@@ -236,6 +219,25 @@ export default Vue.extend( {
         this.deselect( option )
       }
     },
+    parseOption( opt ) {
+      let retVal = {};
+      if ( typeof opt === 'string' ) {
+        retVal = {
+          label: opt,
+          value: opt,
+          selected: false,
+          innerId: ( Math.random() * 100000 ).toFixed() // TODO replace by uuid
+        }
+      } else if ( typeof opt === 'object' ) { // dirty check, because of props validation
+        retVal = {
+          label: this.getOptionLabel( opt ),
+          value: opt,
+          selected: false,
+          innerId: ( Math.random() * 100000 ).toFixed()
+        }
+      }
+      return retVal;
+    }
   },
 } );
 </script>
