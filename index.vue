@@ -31,12 +31,12 @@ $anti-primary:#ff482a;
   }
   &__match {
     float: left;
-    padding: 1px 6px;
+    padding: 3px 6px;
     background: $lgray;
     color: $gray;
-    border: 1px solid lighten($gray, 20%);
+    border: 1px solid lighten($gray, 45%);
     border-radius: 4px;
-    margin: -2px 2px -2px 0;
+    margin: -4px 2px -4px 0;
     &:first-child {
       margin-left: -8px;
     }
